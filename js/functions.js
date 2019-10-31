@@ -1,6 +1,6 @@
 function printMessage(msg){
 	var div = document.createElement('div');
-	div.innerHTML = printMessage;
+	div.innerHTML = playerMove;
 	document.getElementById('messages').appendChild(div);
 }
 
