@@ -1,18 +1,22 @@
 {
 	function playGame(playerInput){
 		
+		const stone= "kamień";
+		const scissors = "nożyce";
+		const paper = "papier";
+
 		clearMessages();
 		
 		const randomNumber = Math.floor(Math.random() * 3 + 1);
 
 		const getMoveName = function (argMoveId) {
-			const computerMove=getMoveName(randomNumber);
+			const computerMove = getMoveName(randomNumber);
 			if (argMoveId == 1) {
-				return 'kamień';
+				return stone;
 			} else if (argMoveId == 2) {
-				return 'papier';
+				return paper;
 			} else if (argMoveId == 3) {
-				return 'nożyce';
+				return scissors;
 			} else {
 				return 'nie ma takiego ruchu';
 			}
@@ -52,23 +56,23 @@
 		const displayResult = function (argComputerMove, argPlayerMove){
 			printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 		
-			if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+			if( argComputerMove ==  stone && argPlayerMove == paper){
 				printMessage('Ty wygrywasz!');
-			} else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+			} else if (argComputerMove == scissors && argPlayerMove == stone){
 				printMessage('Ty wygrywasz!');
-			} else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+			} else if( argComputerMove == paper && argPlayerMove == scissors){
 				printMessage('Ty wygrywasz!');
-			} else if (argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+			} else if (argComputerMove == stone && argPlayerMove == stone){
 				printMessage('Remis!');
-			} else if (argComputerMove == 'papier' && argPlayerMove == 'papier'){
+			} else if (argComputerMove == paper && argPlayerMove == paper){
 				printMessage('Remis!');
-			} else if (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+			} else if (argComputerMove == scissors && argPlayerMove == scissors){
 				printMessage('Remis!');
-			} else if ( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+			} else if ( argComputerMove == stone && argPlayerMove == scissors){
 				printMessage('y all loosers!');
-			} else if ( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+			} else if ( argComputerMove == scissors && argPlayerMove == paper){
 				printMessage('y all loosers!');
-			} else if ( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+			} else if ( argComputerMove == paper && argPlayerMove == stone){
 				printMessage('y all loosers!');
 			} else {
 				printMessage('nie ma takiego ruchu');
